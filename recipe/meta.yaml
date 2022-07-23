@@ -1,4 +1,4 @@
-{% set version = '0.4' %}
+{% set version = "0.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/preferably_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/preferably/preferably_{{ version }}.tar.gz
-  sha256: 278849da19ae63f3184ee8575b68118ab766c18dc6f099077b411ca1be4c8eb1
+  sha256: a5ee661cff5723554061a7fd61ec8d2da7ff705725d99c73ae978a8a1480bb87
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -43,13 +43,10 @@ test:
 about:
   home: https://preferably.amirmasoudabdol.name
   license: MIT
-  summary: "This is an accessible template for 'pkgdown'. It uses two bootstrap themes, Flatly
-    and Darkly and utilizes the 'prefers-color-scheme' CSS variable to automatically
-    serve either of the two based on user\u2019s operating system setting, or allowing
-    them to manually toggle between them."
+  summary: This is an accessible template for 'pkgdown'. It uses two bootstrap themes, Flatly and Darkly and utilizes the 'prefers-color-scheme' CSS variable to automatically serve either of the two based on user’s operating system setting, or allowing them to manually toggle between them.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 # Type: Package
 extra:
